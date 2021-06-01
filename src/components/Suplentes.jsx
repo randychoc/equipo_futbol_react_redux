@@ -3,16 +3,14 @@ import { connect } from 'react-redux'
 
 const Suplentes = ({ suplentes, quitarSuplente }) => (
     <section>
-        <h2>Suplentes</h2>
-        <div className="suplentes">
+        <h2>SUPLENTES</h2>
+        <div className="contenedor contenedorSuplentes">
             {
                 suplentes.map(j => (
-                    <article className="suplente" key={j.id}>
-                        <div>
-                            <img src={j.foto} alt={j.nombre} />
-                            <button onClick={() => quitarSuplente(j)}>X</button>
-                        </div>
+                    <article className="jugador" key={j.id}>
+                        <img className="jugadorImg" src={j.foto} alt={j.nombre} />
                         <p>{j.nombre}</p>
+                        <button className="btnSuplente" onClick={() => quitarSuplente(j)}>Quitar</button>
                     </article>
                 ))
             }

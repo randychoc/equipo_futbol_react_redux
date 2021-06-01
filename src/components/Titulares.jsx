@@ -3,22 +3,22 @@ import { connect } from 'react-redux'
 
 const Titulares = ({ titulares, quitarTitular }) => (
     <section>
-        <h2>Titulares</h2>
-        <div className="cancha">
+        <h2>TITULARES</h2>
+        <div className="contenedor contenedorTitulares">
             {
                 titulares.map(j => (
-                    <article className="titular" key={j.id}>
-                        <div>
-                            <img src={j.foto} alt={j.nombre} />
-                            <button onClick={() => quitarTitular(j)} >X</button>
-                        </div>
+                    <article className="jugador" key={j.id}>                        
+                        <img className="jugadorImg" src={j.foto} alt={j.nombre} />
                         <p>{j.nombre}</p>
+                        <button className="btnTitular" onClick={() => quitarTitular(j)} >Quitar</button>
                     </article>
                 ))
             }
         </div>
     </section>
 )
+
+
 
 const mapStateToProps = state => ({
     titulares: state.titulares
